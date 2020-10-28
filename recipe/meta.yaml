@@ -23,7 +23,7 @@ requirements:
     - pkg-config  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make {{ make }}   
+    - make
   host:
     - gettext  # [unix]
     - libogg {{ libogg }} 
