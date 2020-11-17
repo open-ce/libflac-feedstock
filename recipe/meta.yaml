@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-   number: 1
+   number: 2
    string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - pkg-config  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make {{ make }}   
+    - make
   host:
     - gettext  # [unix]
     - libogg {{ libogg }} 
