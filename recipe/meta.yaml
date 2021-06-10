@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-   number: 2
+   number: 3
    string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
@@ -24,9 +24,15 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - gettext  # [unix]
-    - libogg {{ libogg }} 
+    - libogg {{ libogg }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - libogg {{ libogg }} 
 
