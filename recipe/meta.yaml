@@ -42,6 +42,7 @@ requirements:
     - libgcc-ng  {{ libgcc }}
     - libstdcxx-ng  {{ libstdcxx }}
 
+test:
   commands:
     - test -f $PREFIX/bin/flac  # [unix]
     - test -f $PREFIX/bin/metaflac  # [unix]
