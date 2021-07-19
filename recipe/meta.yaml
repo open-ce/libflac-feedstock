@@ -15,7 +15,9 @@ source:
     - add_libm_to_metaflac.patch      # [linux]
     - add_libm_to_test_streams.patch  # [linux]
     - fix_pkgconfig.patch
-
+    # security patch taken from
+    # https://github.com/NVIDIA/DALI_deps/blob/main/patches/0001-libFLAC-bitreader.c-Fix-out-of-bounds-read.patch
+    - 0001-libFLAC-bitreader.c-Fix-out-of-bounds-read.patch
 build:
    number: 1
    string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
