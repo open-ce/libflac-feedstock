@@ -38,7 +38,7 @@ requirements:
     - libgcc-ng  {{ libgcc }}
     - libstdcxx-ng  {{ libstdcxx }}
   run:
-    - libogg {{ libogg }} 
+    - libogg                  # versioning handled by run_exports
 
 test:
   commands:
