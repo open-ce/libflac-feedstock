@@ -19,7 +19,7 @@ source:
     # https://github.com/NVIDIA/DALI_deps/blob/main/patches/0001-libFLAC-bitreader.c-Fix-out-of-bounds-read.patch
     - 0001-libFLAC-bitreader.c-Fix-out-of-bounds-read.patch
 build:
-   number: 1
+   number: 2
    string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
@@ -28,15 +28,9 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake {{ cmake }}
     - make
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - gettext  # [unix]
     - libogg {{ libogg }}
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - libogg                  # versioning handled by run_exports
 
