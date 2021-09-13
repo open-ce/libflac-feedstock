@@ -28,9 +28,15 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake {{ cmake }}
     - make
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}                               # [x86_64 and c_compiler_version == "7.2.*"]
+    - libstdcxx-ng  {{ libstdcxx }}                         # [x86_64 and c_compiler_version == "7.2.*"]
   host:
     - gettext  # [unix]
     - libogg {{ libogg }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}                               # [x86_64 and c_compiler_version == "7.2.*"]
+    - libstdcxx-ng  {{ libstdcxx }}                         # [x86_64 and c_compiler_version == "7.2.*"]
   run:
     - libogg                  # versioning handled by run_exports
 
